@@ -16,22 +16,22 @@ services:
       DB_NAME: dacoustie
       SECRET: changeme
     restart: unless-stopped
+    volumes:
+      - ./images:/var/www/dacoustie/images
     logging:
       driver: 'json-file'
       options:
         max-size: '50m'
 
   db:
-    image: mariadb
+    image: mariadb:10.7.1-focal
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: changeme
       MYSQL_DATABASE: dacoustie
       MYSQL_USER: dac
       MYSQL_PASSWORD: changeme
-
-  
-
-volumes:
-  database:
-  pgadmin:
+    logging:
+      driver: 'json-file'
+      options:
+        max-size: '50m'

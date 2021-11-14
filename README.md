@@ -11,6 +11,7 @@
 	- Remplacer `backup.sql` par le fichier de sauvegarde
 	- Remplacer `MARIA_DB_CONTAINER_NAME_OR_ID` par l'identifiant repéré ci-dessus
 	- Remplacer `DAC_ACCOUNT_PASSWORD` par le mot de passe de l'utilisateur "dac" (réglé dans docker-compose.yml). Pas d'espace entre le '-p' et le mot de passe !! (ex: `-pPASSWORD`)
+- S'assurer que les images soient bien dans un répertoire nommé `images`, lui-même dans le même répertoire que le `docker-compose.yml`.
 - Le site devrait maintenant fonctionner sur le port précisé dans docker-compose (`http://localhost:1800` par défaut)
 
 ## Backup & Restore

@@ -17,4 +17,7 @@ COPY ./docker/secrets.sh /docker-entrypoint.d/secrets.sh
 RUN chmod +x /docker-entrypoint.d/fpm.sh
 RUN chmod +x /docker-entrypoint.d/secrets.sh
 
+# Volume for images
+VOLUME /var/www/dacoustie/images
+
 EXPOSE 80
