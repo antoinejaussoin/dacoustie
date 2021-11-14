@@ -1,2 +1,3 @@
 restore/
 docker-compose.prod.yml
+.DS_Store
