@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<install type="module" version="1.5.0">
+	<name>S5 Horizontal Login NA</name>
+	<author>Joomla! Project - Modified by Shape5.com</author>
+	<creationDate>October 2007</creationDate>
+	<copyright>(C) 2005 Open Source Matters. All rights reserved.</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>contact@shape5.com</authorEmail>
+	<authorUrl>www.shape5.com</authorUrl>
+	<version>1.0.0</version>
+	<description>Horizontal login module.</description>
+	<files>
+	<filename module="mod_s5_horizontal_login_NA">mod_s5_horizontal_login_NA.php</filename>
+		<filename>s5_horizontal_login_NA/s5_na_loginbutton.png</filename>
+		<filename>s5_horizontal_login_NA/s5_na_input_back.png</filename>
+		<filename>s5_horizontal_login_NA/s5_na_input_back.gif</filename>
+		<filename>s5_horizontal_login_NA/s5_na_loginbutton.gif</filename>
+		<filename>s5_horizontal_login_NA/style.css</filename>
+		<filename>s5_horizontal_login_NA/s5_effects.js</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>tmpl/default.php</filename>
+		<filename>tmpl/index.html</filename>
+	</files>
+	<params>
+		<param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="A suffix to be applied to the css class of the module (table.moduletable), this allows individual module styling" />
+		<param name="login" type="text" default="" label="Login Redirection URL" description="What page will the login redirect to after login, if let blank will load front page" />
+		<param name="logout" type="text" default="" label="Logout Redirection URL" description="What page will the login redirect to after login, if let blank will load front page" />
+		<param name="greeting" type="radio" default="1" label="Greeting" description="Show/Hide the simple greeting text">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="messageyn" type="radio" default="1" label="Use Logged In Message?" description="">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		
+		<param name="morebutton" type="radio" default="0" label="Show more options button?" description="">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+
+<param name="message" type="text" default="Welcome to our site!" label="Logged In Message" description="" />
+<param name="username" type="text" default="Username" label="Username Label" description="" />
+<param name="password" type="text" default="Password" label="Password Label" description="" />
+
+
+		<param name="name" type="list" default="0" label="Name/Username">
+			<option value="0">Username</option>
+			<option value="1">Name</option>
+		</param>
+		
+		<param name="forgotp" type="text" default="Forgot Password?" label="Forgot Password Text" description="" />
+		<param name="forgotu" type="text" default="Username?" label="Forgot Username Text" description="" />		
+	</params>
+</install>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<install type="module" version="1.5.0">	<name>S5 Image Fader</name>
+	<author>Shape5.com</author>
+	<creationDate>October 2007</creationDate>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>contact@shape5.com</authorEmail>
+	<authorUrl>www.shape5.com</authorUrl>
+	<version>2.0.0</version>
+	<description>This module will display images of any url in a fading transition, choose fade in transition or fade in fade out.</description>
+	<files>
+		<filename module="mod_s5_imagefader">mod_s5_imagefader.php</filename>
+                <filename>s5_imagefader/fader.js</filename>
+				<filename>s5_imagefader/reflection.js</filename>
+				<filename>s5_imagefader/faderie6.js</filename>
+				<filename>s5_imagefader/style.css</filename>
+	</files>
+	<images>
+		<filename>s5_imagefader/blank.gif</filename>
+		<filename>s5_imagefader/active.png</filename>
+		<filename>s5_imagefader/nonactive.png</filename>
+		<filename>s5_imagefader/active.gif</filename>
+		<filename>s5_imagefader/nonactive.gif</filename>
+	</images>
+	<params>
+                <param name="pretext" type="textarea" cols="40" rows="5" default="" label="Pre-Text" description="Enter any pre-text message." />
+		<param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="A suffix to be applied to the css class of the module (table.moduletable), this allows individual module styling" />
+		
+		<param name="s5_imagefaderstyle" type="radio" default="0" label="Fader Style" description="Choose Fade In or Fade In/Fade Out">
+			<option value="0">Fade In</option>
+			<option value="1">Fade In/Fade Out</option>
+		</param>
+
+		
+		 <param name="reflection" type="radio" default="0" label="Image Reflection" description="Enable the Mootools powered image reflection?">
+			<option value="0">Enable</option>
+			<option value="1">Disable</option>
+		</param>
+				
+				<param name="tween_time" type="text" default="0.75" label="Tween Time (in seconds)" description="The amount of time in seconds an image takes to fade." />
+                <param name="display_time" type="text" default="7" label="Display Time (in seconds)" description="How many seconds will each image display for?" />
+                <param name="height" type="text" default="183" label="Height" description="Enter the height of the image fader." />
+                <param name="width" type="text" default="482" label="Width" description="Enter the width of the image fader." />
+                <param name="background" type="text" default="" label="Background Color (leave blank for none) ex:FFFFFF" description="Enter the background color. Leave blank for none." />
+                <param name="" type="spacer" default="You may enter up to 10 images. If you do not wish to use 10 simply leave the extra fields blank. IMPORTANT - Do not leave fields blank between images, ie: If you are only using 4 images then fields for images 1,2,3,4 should be filled in, not images 1,3,5,6 or any other order like it." label="Note:" description="" />
+                <param name="picture1" type="text" default="http://www.shape5.com/images/products/2007/imagefader/s5-image-fader.jpg" label="Image 1 Location URL" description="Enter the entire URL of image 1." />
+                <param name="picture1link" type="text" default="http://www.shape5.com" label="Image 1 Hyperlink URL (leave blank if none)" description="Enter the entire Hyperlink URL (leave blank if none) of image 1, leave blank if none." />
+                <param name="picture1target" type="radio" default="1" label="Image 1 Link Target" description="Open hyperlink for image 1 in New Window or same?">
+			<option value="0">Same Window</option>
+			<option value="1">New Window</option>
+		</param>
+                <param name="picture2" type="text" default="" label="Image 2 Location URL" description="Enter the entire URL of image 2." />
+                <param name="picture2link" type="text" default="" label="Image 2 Hyperlink URL (leave blank if none)" description="Enter the entire Hyperlink URL (leave blank if none) of image 2, leave blank if none." />
+                <param name="picture2target" type="radio" default="0" label="Image 2 Link Target" description="Open hyperlink for image 2 in New Window or same?">
+			<option value="0">Same Window</option>
+			<option value="1">New Window</option>
+		</param>
+                <param name="picture3" type="text" default="" label="Image 3 Location URL" description="Enter the entire URL of image 3." />
+                <param name="picture3link" type="text" default="" label="Image 3 Hyperlink URL (leave blank if none)" description="Enter the entire Hyperlink URL (leave blank if none) of image 3, leave blank if none." />
+                <param name="picture3target" type="radio" default="0" label="Image 3 Link Target" description="Open hyperlink for image 3 in New Window or same?">
+			<option value="0">Same Window</option>
+			<option value="1">New Window</option>
+		</param>
+                <param name="picture4" type="text" default="" label="Image 4 Location URL" description="Enter the entire URL of image 4." />
+                <param name="picture4link" type="text" default="" label="Image 4 Hyperlink URL (leave blank if none)" description="Enter the entire Hyperlink URL (leave blank if none) of image 4, leave blank if none." />
+                <param name="picture4target" type="radio" default="0" label="Image 4 Link Target" description="Open hyperlink for image 4 in New Window or same?">
+			<option value="0">Same Window</option>
+			<option value="1">New Window</option>
+		</param>
+                <param name="picture5" type="text" default="" label="Image 5 Location URL" description="Enter the entire URL of image 5." />
+                <param name="picture5link" type="text" default="" label="Image 5 Hyperlink URL (leave blank if none)" description="Enter the entire Hyperlink URL (leave blank if none) of image 5, leave blank if none." />
+                <param name="picture5target" type="radio" default="0" label="Image 5 Link Target" description="Open hyperlink for image 5 in New Window or same?">
+			<option value="0">Same Window</option>
+			<option value="1">New Window</option>
+		</param>
+                <param name="picture6" type="text" default="" label="Image 6 Location URL" description="Enter the entire URL of image 6." />
+                <param name="picture6link" type="text" default="" label="Image 6 Hyperlink URL (leave blank if none)" description="Enter the entire Hyperlink URL (leave blank if none) of image 6, leave blank if none." />
+                <param name="picture6target" type="radio" default="0" label="Image 6 Link Target" description="Open hyperlink for image 6 in New Window or same?">
+			<option value="0">Same Window</option>
+			<option value="1">New Window</option>
+		</param>
+                <param name="picture7" type="text" default="" label="Image 7 Location URL" description="Enter the entire URL of image 7." />
+                <param name="picture7link" type="text" default="" label="Image 7 Hyperlink URL (leave blank if none)" description="Enter the entire Hyperlink URL (leave blank if none) of image 7, leave blank if none." />
+                <param name="picture7target" type="radio" default="0" label="Image 7 Link Target" description="Open hyperlink for image 7 in New Window or same?">
+			<option value="0">Same Window</option>
+			<option value="1">New Window</option>
+		</param>
+                <param name="picture8" type="text" default="" label="Image 8 Location URL" description="Enter the entire URL of image 8." />
+                <param name="picture8link" type="text" default="" label="Image 8 Hyperlink URL (leave blank if none)" description="Enter the entire Hyperlink URL (leave blank if none) of image 8, leave blank if none." />
+                <param name="picture8target" type="radio" default="0" label="Image 8 Link Target" description="Open hyperlink for image 8 in New Window or same?">
+			<option value="0">Same Window</option>
+			<option value="1">New Window</option>
+		</param>
+                <param name="picture9" type="text" default="" label="Image 9 Location URL" description="Enter the entire URL of image 9." />
+                <param name="picture9link" type="text" default="" label="Image 9 Hyperlink URL (leave blank if none)" description="Enter the entire Hyperlink URL (leave blank if none) of image 9, leave blank if none." />
+                <param name="picture9target" type="radio" default="0" label="Image 9 Link Target" description="Open hyperlink for image 9 in New Window or same?">
+			<option value="0">Same Window</option>
+			<option value="1">New Window</option>
+		</param>
+                <param name="picture10" type="text" default="" label="Image 10 Location URL" description="Enter the entire URL of image 10." />
+                <param name="picture10link" type="text" default="" label="Image 10 Hyperlink URL (leave blank if none)" description="Enter the entire Hyperlink URL (leave blank if none) of image 10, leave blank if none." />
+                <param name="picture10target" type="radio" default="0" label="Image 10 Link Target" description="Open hyperlink for image 10 in New Window or same?">
+			<option value="0">Same Window</option>
+			<option value="1">New Window</option>
+		</param>
+	</params>
+</install>
