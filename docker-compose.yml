@@ -1,7 +1,8 @@
 version: '3'
 services:
   frontend:
-    build: .
+    image: antoinejaussoin/dacoustie
+    # build: . # Use this when testing
     depends_on:
       - db
     ports:
