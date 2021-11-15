@@ -16,7 +16,7 @@ COPY ./docker/default.nginx /etc/nginx/sites-available/default
 COPY ./src /var/www/dacoustie
 
 # Backup script
-COPY ./docker/backup.template.sh /etc/cron.daily/backup.template.sh
+COPY ./docker/backup.template.sh /var/configs/backup.template.sh
 
 # Entrypoints
 COPY ./docker/fpm.sh /docker-entrypoint.d/fpm.sh
