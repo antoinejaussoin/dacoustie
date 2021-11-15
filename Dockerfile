@@ -1,3 +1,4 @@
+# FROM --platform=$BUILDPLATFORM ubuntu/nginx:1.18-20.04_beta 
 FROM ubuntu/nginx:1.18-20.04_beta 
 
 # PHP 5.6
@@ -10,6 +11,9 @@ COPY ./docker/default.nginx /etc/nginx/sites-available/default
 
 # PHP code
 COPY ./src /var/www/dacoustie
+
+# Backup script
+COPY ./docker/backup.template.sh /etc/cron.daily/backup.template.sh
 
 # Entrypoints
 COPY ./docker/fpm.sh /docker-entrypoint.d/fpm.sh

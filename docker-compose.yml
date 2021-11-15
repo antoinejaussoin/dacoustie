@@ -1,8 +1,8 @@
 version: '3'
 services:
   frontend:
-    image: antoinejaussoin/dacoustie
-    # build: . # Use this when testing
+    # image: antoinejaussoin/dacoustie
+    build: . # Use this when testing
     depends_on:
       - db
     ports:
@@ -18,6 +18,7 @@ services:
     restart: unless-stopped
     volumes:
       - ./images:/var/www/dacoustie/images
+      - ./backup:/var/backup
     logging:
       driver: 'json-file'
       options:
