@@ -1,15 +1,21 @@
-FROM ubuntu/nginx:1.18-20.04_beta 
+FROM nginx:1.18
+
+RUN apt update && apt -y install lsb-release apt-transport-https ca-certificates
+RUN apt update && apt install -y wget
+RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+RUN echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list && apt update
 
 # PHP 5.6
-RUN apt update && apt install -y software-properties-common
-RUN add-apt-repository ppa:ondrej/php
+# RUN apt update && apt install -y software-properties-common
+# RUN uname --all
+# RUN add-apt-repository ppa:ondrej/php
 RUN apt update && apt install -y php5.6 php5.6-fpm php5.6-mysql php5.6-xml
 
 # MySQL dump for backups
 RUN apt update && apt install -y mariadb-client
 
 # Nginx config
-COPY ./docker/default.nginx /etc/nginx/sites-available/default
+COPY ./docker/default.nginx /etc/nginx/conf.d/default.conf
 
 # PHP code
 COPY ./src /var/www/dacoustie
