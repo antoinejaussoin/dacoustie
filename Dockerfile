@@ -1,5 +1,4 @@
-FROM --platform=$BUILDPLATFORM ubuntu/nginx:1.18-20.04_beta 
-# FROM ubuntu/nginx:1.18-20.04_beta # Use this when testing locally
+FROM ubuntu/nginx:1.18-20.04_beta 
 
 # PHP 5.6
 RUN apt update && apt install -y software-properties-common

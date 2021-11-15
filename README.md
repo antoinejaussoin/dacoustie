@@ -21,3 +21,4 @@ Un dump de la base de donnée est créé chaque jour, et le fichier se retrouve 
 
 ## Restoring a backup
 cat database.sql | docker exec -i dacoustie-db-1 mysql -u dac -pchangeme dacoustie
+
