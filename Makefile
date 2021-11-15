@@ -1,3 +1,3 @@
 publish:
-	docker build . -t antoinejaussoin/dacoustie:latest
-	docker push antoinejaussoin/dacoustie:latest
+	docker build . -t antoinejaussoin/dacoustie:beta
+	docker push antoinejaussoin/dacoustie:beta
