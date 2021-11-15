@@ -1,9 +1,15 @@
-FROM nginx:1.18
+FROM nginx:1.19
 
-RUN apt update && apt -y install lsb-release apt-transport-https ca-certificates
-RUN apt update && apt install -y wget
-RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
-RUN echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list && apt update
+ENV DEBIAN_FRONTEND noninteractive
+
+# RUN apt update && apt -y install lsb-release apt-transport-https ca-certificates
+# RUN apt update && apt install -y wget
+# RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+# RUN echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list && apt update
+
+RUN apt update && apt install -y gnupg
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4F4EA0AAE5267A6C
+RUN echo "deb http://ppa.launchpad.net/ondrej/php/ubuntu bionic main" > /etc/apt/sources.list.d/php.list
 
 # PHP 5.6
 # RUN apt update && apt install -y software-properties-common
@@ -14,13 +20,13 @@ RUN apt update && apt install -y php5.6 php5.6-fpm php5.6-mysql php5.6-xml
 # MySQL dump for backups
 RUN apt update && apt install -y mariadb-client
 
-# Nginx config
+# Nginx Config
 COPY ./docker/default.nginx /etc/nginx/conf.d/default.conf
 
-# PHP code
+# PHP Code
 COPY ./src /var/www/dacoustie
 
-# Backup script
+# Backup Script
 COPY ./docker/backup.template.sh /var/configs/backup.template.sh
 
 # Entrypoints

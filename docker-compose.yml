@@ -19,6 +19,7 @@ services:
     volumes:
       - ./images:/var/www/dacoustie/images
       - ./backup:/var/backup
+      - ./logs:/var/log/nginx
     logging:
       driver: 'json-file'
       options:
