@@ -14,11 +14,10 @@
 - S'assurer que les images soient bien dans un répertoire nommé `images`, lui-même dans le même répertoire que le `docker-compose.yml`.
 - Le site devrait maintenant fonctionner sur le port précisé dans docker-compose (`http://localhost:1800` par défaut)
 
-## Backup & Restore
+## Backups
 
-https://support.hostway.com/hc/en-us/articles/360000220190-How-to-backup-and-restore-MySQL-databases-on-Linux
+Un dump de la base de donnée est créé chaque jour, et le fichier se retrouve dans le volume pointant vers `/var/backup` et spécifié dans docker-compose.yml.
 
-mysql -u [username] –p[password] [database_name] < [dump_file.sql]
 
 ## Restoring a backup
-cat database.sql | docker exec -i DOCKER_CONTAINER_NAME_OR_ID mysql -u dac -pDAC_ACCOUNT_PASSWORD dacoustie
+cat database.sql | docker exec -i dacoustie-db-1 mysql -u dac -pchangeme dacoustie

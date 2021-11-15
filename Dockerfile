@@ -6,6 +6,9 @@ RUN apt update && apt install -y software-properties-common
 RUN add-apt-repository ppa:ondrej/php
 RUN apt update && apt install -y php5.6 php5.6-fpm php5.6-mysql php5.6-xml
 
+# MySQL dump for backuos
+RUN apt update && apt install -y mariadb-client
+
 # Nginx config
 COPY ./docker/default.nginx /etc/nginx/sites-available/default
 
