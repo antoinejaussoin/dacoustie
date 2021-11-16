@@ -30,5 +30,6 @@ RUN chmod +x /docker-entrypoint.d/startup-cron.sh
 
 # Volume for images
 VOLUME /var/www/dacoustie/images
+VOLUME /var/backup
 
 EXPOSE 80
