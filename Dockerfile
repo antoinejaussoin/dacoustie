@@ -8,20 +8,25 @@ RUN apt update && apt install -y php5.6 php5.6-fpm php5.6-mysql php5.6-xml
 # MySQL dump for backups
 RUN apt update && apt install -y mariadb-client
 
+# Cron & Backup
+RUN apt update && apt install -y cron
+COPY ./docker/backup.crontab /etc/cron.d/backup.crontab
+RUN chmod 0644 /etc/cron.d/backup.crontab && crontab /etc/cron.d/backup.crontab
+COPY ./docker/backup.template.sh /var/configs/backup.template.sh
+
 # Nginx config
 COPY ./docker/default.nginx /etc/nginx/sites-available/default
 
 # PHP code
 COPY ./src /var/www/dacoustie
 
-# Backup script
-COPY ./docker/backup.template.sh /var/configs/backup.template.sh
-
 # Entrypoints
-COPY ./docker/fpm.sh /docker-entrypoint.d/fpm.sh
-COPY ./docker/secrets.sh /docker-entrypoint.d/secrets.sh
-RUN chmod +x /docker-entrypoint.d/fpm.sh
-RUN chmod +x /docker-entrypoint.d/secrets.sh
+COPY ./docker/startup-fpm.sh /docker-entrypoint.d/startup-fpm.sh
+COPY ./docker/startup-secrets.sh /docker-entrypoint.d/startup-secrets.sh
+COPY ./docker/startup-cron.sh /docker-entrypoint.d/startup-cron.sh
+RUN chmod +x /docker-entrypoint.d/startup-fpm.sh
+RUN chmod +x /docker-entrypoint.d/startup-secrets.sh
+RUN chmod +x /docker-entrypoint.d/startup-cron.sh
 
 # Volume for images
 VOLUME /var/www/dacoustie/images
