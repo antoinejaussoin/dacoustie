@@ -16,7 +16,7 @@ class JConfig {
 	var $xmlrpc_server = '0';
 	var $log_path = '/var/www/dacoustie/joomla/logs';
 	var $tmp_path = '/var/www/dacoustie/joomla/tmp';
-	var $live_site = '';
+	var $live_site = '${BASE_URL}';
 	var $offset = '1';
 	var $caching = '0';
 	var $cachetime = '15';
