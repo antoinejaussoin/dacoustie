@@ -4,5 +4,5 @@ publish:
 	docker build . -t antoinejaussoin/dacoustie:alpha
 	docker push antoinejaussoin/dacoustie:alpha
 
-publish-arm:
+publish-multiarch:
 	docker buildx build --platform ${TARGET_ARCHS} -f ./Dockerfile -t antoinejaussoin/dacoustie:alpha .

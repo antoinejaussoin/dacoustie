@@ -15,7 +15,7 @@ services:
       DB_PASSWORD: changeme
       DB_NAME: dacoustie
       SECRET: changeme
-      BASE_URL: 
+      BASE_URL: "https://www.dacoustie.com"
     restart: unless-stopped
     volumes:
       - ./images:/var/www/dacoustie/images
