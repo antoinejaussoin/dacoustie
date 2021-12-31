@@ -251,6 +251,16 @@ background: <?php echo $s5_colorback; ?> url(<?php echo $s5_repeatback; ?>) repe
 </style> 
 <?php } ?>
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FF900HPWG9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FF900HPWG9');
+</script>
+
 </head>
 <body id="s5_bodyrepeatback">
 
