@@ -1,7 +1,7 @@
 version: '3'
 services:
   frontend:
-    image: antoinejaussoin/dacoustie
+    image: antoinejaussoin/dacoustie:alpha
     # build: . # Use this when testing
     depends_on:
       - db
@@ -15,7 +15,7 @@ services:
       DB_PASSWORD: changeme
       DB_NAME: dacoustie
       SECRET: changeme
-      BASE_URL: "https://www.dacoustie.com"
+      BASE_URL: "http://localhost:1800"
     restart: unless-stopped
     volumes:
       - ./images:/var/www/dacoustie/images
